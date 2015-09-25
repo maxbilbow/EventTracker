@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" build-on-make="true" name="EventTracker:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="EventTracker.war">
+    <root id="archive" name="EventTracker-0.0.1-SNAPSHOT.war">
       <element id="artifact" artifact-name="EventTracker:war exploded" />
     </root>
   </artifact>
