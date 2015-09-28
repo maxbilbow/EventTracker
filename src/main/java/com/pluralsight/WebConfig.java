@@ -22,7 +22,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
-import org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter;
+//import org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.persistence.EntityManagerFactory;
@@ -32,9 +32,9 @@ import java.util.Properties;
 
 @Configuration
 @EnableWebMvc
-@EnableTransactionManagement
-@EnableJpaRepositories
-@EnableAspectJAutoProxy(proxyTargetClass = true)
+//@EnableTransactionManagement
+//@EnableJpaRepositories
+//@EnableAspectJAutoProxy(proxyTargetClass = true)
 @ComponentScan(basePackages = "com.pluralsight")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
@@ -84,62 +84,47 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     // beans
 
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-        final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-        em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[] { "com.pluralsight.model" });
-
-        final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-        em.setJpaVendorAdapter(vendorAdapter);
-        em.setJpaProperties(additionalProperties());
-
-        return em;
-    }
-
-    @Bean
-    public DataSource dataSource() {
-        final DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/tcdb?createDatabaseIfNotExist=true");
-        dataSource.setUsername("root");
-        dataSource.setPassword("password");
-
-        return dataSource;
-    }
-
-    @Bean
-    public PlatformTransactionManager transactionManager(final EntityManagerFactory emf) {
-        final JpaTransactionManager transactionManager = new JpaTransactionManager();
-        transactionManager.setEntityManagerFactory(emf);
-        return transactionManager;
-    }
-
-    @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
-        return new PersistenceExceptionTranslationPostProcessor();
-    }
-
-    final Properties additionalProperties() {
-        final Properties hibernateProperties = new Properties();
-        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
-        hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
-        hibernateProperties.setProperty("hibernate.globally_quoted_identifiers", "true");
-        return hibernateProperties;
-    }
-
-    @Bean
-    public AnnotationMethodHandlerAdapter getAnnotationMethodHandlerAdapter() {
-        AnnotationMethodHandlerAdapter adapter = new AnnotationMethodHandlerAdapter();
-        return adapter;
-    }
-
 //    @Bean
-//    public DefaultAnnotationHandlerMapping getDefaultAnnotationHandlerMapping(){
-//        return new DefaultAnnotationHandlerMapping();
+//    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+//        final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+//        em.setDataSource(dataSource());
+//        em.setPackagesToScan(new String[] { "com.pluralsight.model" });
+//
+//        final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+//        em.setJpaVendorAdapter(vendorAdapter);
+//        em.setJpaProperties(additionalProperties());
+//
+//        return em;
 //    }
+//
 //    @Bean
-//    public CandidateService candidateService() {
-//        return new CandidateService();
+//    public DataSource dataSource() {
+//        final DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//        dataSource.setUrl("jdbc:mysql://localhost:3306/tcdb?createDatabaseIfNotExist=true");
+//        dataSource.setUsername("root");
+//        dataSource.setPassword("password");
+//
+//        return dataSource;
+//    }
+//
+//    @Bean
+//    public PlatformTransactionManager transactionManager(final EntityManagerFactory emf) {
+//        final JpaTransactionManager transactionManager = new JpaTransactionManager();
+//        transactionManager.setEntityManagerFactory(emf);
+//        return transactionManager;
+//    }
+//
+//    @Bean
+//    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
+//        return new PersistenceExceptionTranslationPostProcessor();
+//    }
+//
+//    final Properties additionalProperties() {
+//        final Properties hibernateProperties = new Properties();
+//        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+//        hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+//        hibernateProperties.setProperty("hibernate.globally_quoted_identifiers", "true");
+//        return hibernateProperties;
 //    }
 }

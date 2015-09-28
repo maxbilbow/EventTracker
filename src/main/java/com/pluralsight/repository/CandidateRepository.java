@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by bilbowm on 28/09/2015.
  */
-@Repository("candidateRepository")
+//@Repository("candidateRepository")
 public interface CandidateRepository extends JpaRepository<Candidate, Long> {
 }

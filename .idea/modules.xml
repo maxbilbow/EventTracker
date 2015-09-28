@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EventTracker.iml" filepath="$PROJECT_DIR$/EventTracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EventTracker.iml" filepath="$PROJECT_DIR$/EventTracker.iml" group="Boot" />
+      <module fileurl="file://$PROJECT_DIR$/TheCamp/TheCamp.iml" filepath="$PROJECT_DIR$/TheCamp/TheCamp.iml" group="Boot" />
     </modules>
   </component>
 </project>

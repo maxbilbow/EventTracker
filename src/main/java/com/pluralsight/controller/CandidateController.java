@@ -2,6 +2,7 @@ package com.pluralsight.controller;
 
 import com.pluralsight.model.Candidate;
 import com.pluralsight.service.CandidateService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import javax.annotation.Resource;
 import javax.validation.Valid;
 
 /**
@@ -22,7 +24,7 @@ public class CandidateController {
 
 //    @Resource
 //    @Qualifier("candidateService")
-//    @Autowired
+    @Autowired
     private CandidateService candidateService;
 
     @RequestMapping(value = "/newCandidate", method = RequestMethod.GET)
