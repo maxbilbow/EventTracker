@@ -17,6 +17,10 @@
 	<a href="attendee.html">
 		Add Attendee >>
 	</a>
-
+<br />
+	<a href="events.html">
+		View Events >>
+	</a>
+<script type="javascript" src="WEB-INF/js/event-list.js"></script>
 </body>
 </html>

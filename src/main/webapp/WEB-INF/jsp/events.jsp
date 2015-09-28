@@ -3,7 +3,7 @@
 	<head>
 		<title>Hello Events Angular</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-		<script src="events.js"></script>
+		<script src="js/event-list.js"></script>
 	</head>
 
 	<body>
@@ -16,5 +16,6 @@
 				</li>	
 			</ul>
 		</div>
+
 	</body>
 </html>

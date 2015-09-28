@@ -32,7 +32,10 @@
 	</a>
 	<a href="?language=es">
 		Spanish
-	</a> 
+	</a>
+	<a href="?language=pi">
+		Pirate
+	</a>
 
 	<form:form commandName="attendee">
 		<form:errors path="*" cssClass="errorblock" element="div"/>

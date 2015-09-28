@@ -1,17 +1,16 @@
 package com.pluralsight.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.pluralsight.model.Event;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pluralsight.model.Event;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class EventsReportController {
 
-	@RequestMapping("/events")
+	@RequestMapping("/event-list")
 	public List<Event> getEvents() {
 		
 		List<Event> events = new ArrayList<>();
@@ -28,5 +27,6 @@ public class EventsReportController {
 		
 		return events;
 	}
-	
+
+
 }
