@@ -32,8 +32,8 @@ import java.util.Properties;
  */
 @Configuration
 @EnableWebMvc
-@EnableTransactionManagement
-@EnableJpaRepositories
+//@EnableTransactionManagement
+//@EnableJpaRepositories
 //@EnableAspectJAutoProxy(proxyTargetClass = true)
 @ComponentScan(basePackages = "com.maxbilbow")
 public class WebConfig extends WebMvcConfigurerAdapter {

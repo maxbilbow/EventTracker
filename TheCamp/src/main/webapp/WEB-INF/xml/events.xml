@@ -1,0 +1,18 @@
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+    <!--<xhtml:script xmlns:xhtml="http://www.w3.org/1999/xhtml"-->
+    <!--src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"-->
+    <!--type="application/javascript"/>-->
+
+    <!--<xhtml:script xmlns:xhtml="http://www.w3.org/1999/xhtml"-->
+    <!--src="js/event-list.js"-->
+    <!--type="application/javascript"/>-->
+
+
+    <!--<events class="events-container" ng-controller="Events">-->
+    <!--<event ng-repeat="event in events">-->
+    <!--{{event.name}}-->
+    <!--</event>-->
+    <!--</events>-->
+
+
+
