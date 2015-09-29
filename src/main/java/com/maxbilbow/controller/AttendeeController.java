@@ -1,17 +1,21 @@
 package com.maxbilbow.controller;
 
-import javax.validation.Valid;
-
+import com.maxbilbow.model.Attendee;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.maxbilbow.model.Attendee;
+import javax.annotation.Resource;
+import javax.validation.Valid;
 
 @Controller
 public class AttendeeController {
+
+	@Resource
+	private JpaRepository<Attendee, Long> attendeeLongJpaRepository;
 
 	@RequestMapping(value="/attendee", method = RequestMethod.GET)
 	public String displayAttendeePage(Model model) {
@@ -30,7 +34,9 @@ public class AttendeeController {
 		if(result.hasErrors()) {
 			return "attendee";
 		}
-		
+
+		attendeeLongJpaRepository.save(attendee);
+
 		return "redirect:index.html";
 		
 	}

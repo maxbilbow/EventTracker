@@ -3,10 +3,7 @@ package com.maxbilbow.model;
 import com.maxbilbow.view.Party;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by bilbowm on 28/09/2015.
@@ -24,6 +21,7 @@ public class Candidate {
 
     @NotEmpty @Party
     private String party;
+
 
 
     public String getName() {
@@ -49,4 +47,6 @@ public class Candidate {
     public void setId(Long id) {
         this.id = id;
     }
+
+
 }

@@ -1,14 +1,19 @@
 package com.maxbilbow.model;
 
-import javax.validation.constraints.Size;
-
+import com.maxbilbow.view.Phone;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.maxbilbow.view.Phone;
+import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.util.List;
 
-
+@Entity
 public class Attendee {
+
+	@Id
+	@GeneratedValue
+	private Long id;
 
 	@Size(min=2, max=30)
 	private String name;
@@ -18,6 +23,9 @@ public class Attendee {
 
 	@NotEmpty @Phone
 	private String phone;
+
+	@ManyToMany(fetch = FetchType.EAGER)
+	private List<Event> events;
 	
 	public String getPhone() {
 		return phone;
@@ -42,5 +50,20 @@ public class Attendee {
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
+	}
 }

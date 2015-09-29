@@ -2237,11 +2237,43 @@
       <index name="idx_unique_manager" unique="true" columns="manager_staff_id"/>
       <index name="idx_fk_address_id" unique="false" columns="address_id"/>
     </table>
+    <table name="attendee" schema="" catalog="tcdb" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="emailAddress" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_f5ys8mbrm533ooykym1kekog7" table="attendee_event" schema="" catalog="tcdb" columns="Attendee_id"/>
+      <exported-key name="FK_hc4j5hdeyrtgolw57gpr3kyhs" table="event_attendee" schema="" catalog="tcdb" columns="attendeeList_id"/>
+    </table>
+    <table name="attendee_event" schema="" catalog="tcdb" type="TABLE">
+      <column name="Attendee_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="events_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <foreign-key name="FK_4pcg39o7uixgl9o41pg2nbpf7" columns="events_id" ref-table="event" ref-schema="" ref-catalog="tcdb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_f5ys8mbrm533ooykym1kekog7" columns="Attendee_id" ref-table="attendee" ref-schema="" ref-catalog="tcdb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_4pcg39o7uixgl9o41pg2nbpf7" unique="false" columns="events_id"/>
+      <index name="FK_f5ys8mbrm533ooykym1kekog7" unique="false" columns="Attendee_id"/>
+    </table>
     <table name="candidates" schema="" catalog="tcdb" type="TABLE">
       <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="party" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="event" schema="" catalog="tcdb" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_4pcg39o7uixgl9o41pg2nbpf7" table="attendee_event" schema="" catalog="tcdb" columns="events_id"/>
+      <exported-key name="FK_2qtf8hlo7r7mylthsv0c8sjbq" table="event_attendee" schema="" catalog="tcdb" columns="Event_id"/>
+    </table>
+    <table name="event_attendee" schema="" catalog="tcdb" type="TABLE">
+      <column name="Event_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="attendeeList_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <foreign-key name="FK_2qtf8hlo7r7mylthsv0c8sjbq" columns="Event_id" ref-table="event" ref-schema="" ref-catalog="tcdb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_hc4j5hdeyrtgolw57gpr3kyhs" columns="attendeeList_id" ref-table="attendee" ref-schema="" ref-catalog="tcdb" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_2qtf8hlo7r7mylthsv0c8sjbq" unique="false" columns="Event_id"/>
+      <index name="FK_hc4j5hdeyrtgolw57gpr3kyhs" unique="false" columns="attendeeList_id"/>
     </table>
     <table name="city" schema="" catalog="world" type="TABLE">
       <column name="ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>

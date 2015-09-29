@@ -27,7 +27,7 @@
 
 	<form:form commandName="event">
 		<form:errors path="*" cssClass="errorblock" element="div"/>
-		<label for="textinput1">Enter Minutes:</label>
+		<label for="textinput1">Enter event name:</label>
 		<form:input path="name" cssErrorClass="error"/>
 		<form:errors path="name" cssClass="error" />
 		<br>
