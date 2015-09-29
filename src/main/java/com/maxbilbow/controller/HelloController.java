@@ -1,4 +1,4 @@
-package com.pluralsight.controller;
+package com.maxbilbow.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,6 +1,6 @@
-package com.pluralsight.model;
+package com.maxbilbow.model;
 
-import com.pluralsight.view.Party;
+import com.maxbilbow.view.Party;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;

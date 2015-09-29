@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.maxbilbow;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
@@ -27,7 +27,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
 
 	private AnnotationConfigWebApplicationContext getContext() {
 		AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-		context.setConfigLocation("com.pluralsight.WebConfig");
+		context.setConfigLocation("com.maxbilbow.WebConfig");
 		return context;
 	}
 

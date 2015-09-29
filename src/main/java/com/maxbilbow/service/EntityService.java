@@ -1,4 +1,4 @@
-package com.pluralsight.service;
+package com.maxbilbow.service;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.pluralsight.model;
+package com.maxbilbow.model;
 
 public class Event {
 

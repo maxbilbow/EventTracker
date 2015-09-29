@@ -1,8 +1,7 @@
-package com.pluralsight.repository;
+package com.maxbilbow.repository;
 
-import com.pluralsight.model.Candidate;
+import com.maxbilbow.model.Candidate;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  * Created by bilbowm on 28/09/2015.

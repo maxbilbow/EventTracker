@@ -1,4 +1,4 @@
-package com.pluralsight.view;
+package com.maxbilbow.view;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

@@ -1,4 +1,4 @@
-package com.pluralsight.controller;
+package com.maxbilbow.controller;
 
 import javax.validation.Valid;
 
@@ -8,7 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.pluralsight.model.Attendee;
+import com.maxbilbow.model.Attendee;
 
 @Controller
 public class AttendeeController {

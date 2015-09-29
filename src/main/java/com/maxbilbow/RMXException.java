@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.maxbilbow;
 
 public class RMXException extends Exception {
 	/**

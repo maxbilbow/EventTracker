@@ -1,6 +1,6 @@
-package com.pluralsight.controller;
+package com.maxbilbow.controller;
 
-import com.pluralsight.model.Event;
+import com.maxbilbow.model.Event;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

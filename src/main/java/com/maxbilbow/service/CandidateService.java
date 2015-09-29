@@ -1,6 +1,6 @@
-package com.pluralsight.service;
+package com.maxbilbow.service;
 
-import com.pluralsight.model.Candidate;
+import com.maxbilbow.model.Candidate;
 
 /**
  * Created by bilbowm on 28/09/2015.

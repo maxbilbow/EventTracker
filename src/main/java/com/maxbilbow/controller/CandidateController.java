@@ -1,7 +1,7 @@
-package com.pluralsight.controller;
+package com.maxbilbow.controller;
 
-import com.pluralsight.model.Candidate;
-import com.pluralsight.service.CandidateService;
+import com.maxbilbow.model.Candidate;
+import com.maxbilbow.service.CandidateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import javax.annotation.Resource;
 import javax.validation.Valid;
 
 /**
@@ -19,7 +18,7 @@ import javax.validation.Valid;
 @Controller
 @SessionAttributes("candidate")
 //@EnableAutoConfiguration
-//@ComponentScan("com.pluralsight.service")
+//@ComponentScan("com.maxbilbow.service")
 public class CandidateController {
 
 //    @Resource
@@ -43,6 +42,8 @@ public class CandidateController {
         if (result.hasErrors()) {
             return "newCandidate";
         }
+
+        candidateService.save(candidate);
 
         return "redirect:index.html";
     }
